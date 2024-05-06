@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Market</title>
+    <link rel="stylesheet" href="main.css"> 
+</head>
+<style>
+</style>
+<script type ="text/javascript" src="orderlist.js">
+</script>
+
+<body>
+    <div id="menu">
+        <h1>♥INAMON RESTAURANT♥</h1>
+        <h2>Menu</h2>
+        <h3>Please select a menu</h3>
+        <a href="./orderlist.html">Order List</a>
+        <form>
+            NAME : <input id="order_name" class ="login_input" type ="text"> <br>
+            PHONE : <input id="p_num" class ="login_input" type ="text"> <br>
+        </form> 
+    </div>
+
+    <div id="set">
+        <div class="menu_div">
+            <img class="menu_img" src="./img/pizza.jpg">
+            <p class="menu_title">Pizza</p>
+            <input class="menu_button" type="button" value="Order" onclick="alert('주문 완료!')">
+        </div>
+
+        <div class="menu_div">
+            <img class="menu_img" src="./img/chicken.jpg">
+            <p class="menu_title">Chicken</p>
+            <input class="menu_button" type="button" value="Order" onclick="alert('주문 완료!')">
+        </div>
+
+        <div class="menu_div">
+            <img class="menu_img" src="./img/hamburger.jpg">
+            <p class="menu_title">Hamburger</p>
+            <input class="menu_button" type="button" value="Order" onclick="alert('주문 완료!')">
+        </div>
+    </div>
+</body>
+</html>
