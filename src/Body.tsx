@@ -11,7 +11,7 @@ export const Body = () => {
 			<div className="relative flex justify-center">
 				<img
 					className="h-auto min-h-[500px] w-full object-cover"
-					src="src/assets/bg_img.jpg"
+					src="/assets/bg_img.jpg"
 					alt="Background"
 					style={{ filter: "blur(3px)" }}
 				/>

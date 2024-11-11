@@ -20,7 +20,7 @@ export const Archiving = () => {
 				>
 					<img
 						className="h-20 w-20"
-						src="src/assets/25231.png"
+						src="/assets/25231.png"
 					/>
 					<div className="flex flex-col">
 						<span className="font-dynapuff text-4xl font-bold hover:text-teal-800">
@@ -38,7 +38,7 @@ export const Archiving = () => {
 				>
 					<img
 						className="h-20 w-20"
-						src="src/assets/14343537.png"
+						src="/assets/14343537.png"
 					/>
 					<div className="flex flex-col">
 						<span className="font-dynapuff text-4xl font-bold hover:text-teal-800">
