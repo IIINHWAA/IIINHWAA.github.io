@@ -4,11 +4,32 @@ import { Skills } from "./Skills";
 import { Archiving } from "./Archiving";
 import { Project } from "./Project";
 
-export const Body = () => {
+type BodyProps = {
+	mainRef: React.RefObject<HTMLDivElement>;
+	aboutMeRef: React.RefObject<HTMLDivElement>;
+	skillsRef: React.RefObject<HTMLDivElement>;
+	archivingRef: React.RefObject<HTMLDivElement>;
+	projectRef: React.RefObject<HTMLDivElement>;
+};
+
+export const Body = ({
+	mainRef,
+	aboutMeRef,
+	skillsRef,
+	archivingRef,
+	projectRef,
+}: BodyProps) => {
+	const scrollToAboutMe = () => {
+		aboutMeRef.current?.scrollIntoView({ behavior: "smooth" });
+	};
+
 	return (
 		<div className="flex flex-col">
 			{/* 이미지 포함 소개 */}
-			<div className="relative flex justify-center">
+			<div
+				className="relative flex justify-center"
+				ref={mainRef}
+			>
 				<img
 					className="h-auto min-h-[500px] w-full object-cover"
 					src="/assets/bg_img.jpg"
@@ -31,34 +52,49 @@ export const Body = () => {
 						</span>
 						<span>정인화입니다</span>
 					</div>
-					<button className="mt-5 flex h-12 w-12 items-center justify-center">
+					<button
+						onClick={scrollToAboutMe}
+						className="mt-5 flex h-12 w-12 items-center justify-center"
+					>
 						<FaAngleDoubleDown className="text-4xl font-bold text-gray-400 hover:text-white" />
 					</button>
 				</div>
 			</div>
 
-			<div className="relative flex justify-center">
+			<div
+				className="relative flex justify-center"
+				ref={aboutMeRef}
+			>
 				<div className="h-[700px] w-full bg-white md:h-[500px]">
 					<AboutMe />
 				</div>
 			</div>
 
 			{/* skills 부분 */}
-			<div className="relative flex justify-center">
+			<div
+				className="relative flex justify-center"
+				ref={skillsRef}
+			>
 				<div className="h-[700px] w-full bg-rose-200 md:h-[500px]">
 					<Skills />
 				</div>
 			</div>
 
 			{/* archiving 부분 */}
-			<div className="relative flex justify-center">
+			<div
+				className="relative flex justify-center"
+				ref={archivingRef}
+			>
 				<div className="h-[500px] w-full bg-teal-950 md:h-[400px]">
 					<Archiving />
 				</div>
 			</div>
 
 			{/* archiving 부분 */}
-			<div className="relative flex justify-center">
+			<div
+				className="relative flex justify-center"
+				ref={projectRef}
+			>
 				<div className="h-[1800px] w-full bg-gray-50 md:h-[1000px]">
 					<Project />
 				</div>

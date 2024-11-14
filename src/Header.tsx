@@ -1,10 +1,28 @@
 import { useEffect, useState } from "react";
 import { IoMenu } from "react-icons/io5";
 
-export const Header = () => {
+type HeaderProps = {
+	mainRef: React.RefObject<HTMLDivElement>;
+	aboutMeRef: React.RefObject<HTMLDivElement>;
+	skillsRef: React.RefObject<HTMLDivElement>;
+	archivingRef: React.RefObject<HTMLDivElement>;
+	projectRef: React.RefObject<HTMLDivElement>;
+};
+
+export const Header = ({
+	mainRef,
+	aboutMeRef,
+	skillsRef,
+	archivingRef,
+	projectRef,
+}: HeaderProps) => {
 	const [isScrolled, setIsScrolled] = useState(false);
 	const handleScroll = () => {
 		setIsScrolled(window.scrollY > 0);
+	};
+
+	const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
+		ref.current?.scrollIntoView({ behavior: "smooth" });
 	};
 
 	useEffect(() => {
@@ -23,26 +41,57 @@ export const Header = () => {
 			}`}
 		>
 			<nav className="mx-auto flex w-full max-w-5xl justify-between gap-x-10 px-4 lg:px-0">
-				<div className="font-dynapuff text-xl">
+				<button
+					onClick={() => scrollToSection(mainRef)}
+					className="font-dynapuff text-xl"
+				>
 					INHWA's Portfolio
-				</div>
+				</button>
 				<div className="flex items-center gap-7">
 					<div className="flex flex-row gap-7 md:hidden">
 						<IoMenu className="text-3xl" />
 					</div>
 					<div className="hidden gap-7 md:flex">
-						<div className="font-dynapuff text-lg">
+						<button
+							onClick={() =>
+								scrollToSection(
+									aboutMeRef
+								)
+							}
+							className="font-dynapuff text-lg"
+						>
 							About Me
-						</div>
-						<div className="font-dynapuff text-lg">
+						</button>
+						<button
+							onClick={() =>
+								scrollToSection(
+									skillsRef
+								)
+							}
+							className="font-dynapuff text-lg"
+						>
 							Skills
-						</div>
-						<div className="font-dynapuff text-lg">
+						</button>
+						<button
+							onClick={() =>
+								scrollToSection(
+									archivingRef
+								)
+							}
+							className="font-dynapuff text-lg"
+						>
 							Archiving
-						</div>
-						<div className="font-dynapuff text-lg">
+						</button>
+						<button
+							onClick={() =>
+								scrollToSection(
+									projectRef
+								)
+							}
+							className="font-dynapuff text-lg"
+						>
 							Projects
-						</div>
+						</button>
 					</div>
 				</div>
 			</nav>
